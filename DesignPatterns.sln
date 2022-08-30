@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns", "src\DesignPatterns\DesignPatterns.csproj", "{DFB31DB3-A603-41A2-AD04-DEB5AB5B2CD5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{63FB8EFF-0F76-4FB7-BFE5-888531739B2A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFB31DB3-A603-41A2-AD04-DEB5AB5B2CD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFB31DB3-A603-41A2-AD04-DEB5AB5B2CD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFB31DB3-A603-41A2-AD04-DEB5AB5B2CD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFB31DB3-A603-41A2-AD04-DEB5AB5B2CD5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DFB31DB3-A603-41A2-AD04-DEB5AB5B2CD5} = {63FB8EFF-0F76-4FB7-BFE5-888531739B2A}
+	EndGlobalSection
+EndGlobal
