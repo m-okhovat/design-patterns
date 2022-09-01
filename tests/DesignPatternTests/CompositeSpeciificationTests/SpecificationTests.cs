@@ -1,4 +1,5 @@
-using DesignPatterns.CompositeSpecification;
+using DesignPatterns.CompositeSpecifications;
+using DesignPatterns.CompositeSpecifications.BaseSpecifications;
 
 namespace SpecificationRTests.CompositeSpecificationTests;
 

@@ -1,4 +1,4 @@
-namespace DesignPatterns.CompositeSpecification;
+namespace DesignPatterns.CompositeSpecifications.BaseSpecifications;
 
 public class NotSpecification<T> : Specification<T>
 {

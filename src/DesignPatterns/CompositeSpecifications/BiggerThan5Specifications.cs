@@ -1,4 +1,6 @@
-namespace DesignPatterns.CompositeSpecification;
+using DesignPatterns.CompositeSpecifications.BaseSpecifications;
+
+namespace DesignPatterns.CompositeSpecifications;
 
 public class BiggerThan5Specifications  : Specification<int>
 {

@@ -1,4 +1,4 @@
-namespace DesignPatterns.CompositeSpecification;
+namespace DesignPatterns.CompositeSpecifications.BaseSpecifications;
 public abstract class Specification<T> : ISpecification<T>
 {
     public Specification<T> And(ISpecification<T> right)
