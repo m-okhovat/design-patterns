@@ -1,4 +1,4 @@
-namespace DesignPatterns;
+namespace DesignPatterns.CompositeSpecification;
 
 public class OrSpecification<T> : ISpecification<T>
 {

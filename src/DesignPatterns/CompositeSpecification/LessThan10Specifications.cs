@@ -1,4 +1,4 @@
-namespace DesignPatterns;
+namespace DesignPatterns.CompositeSpecification;
 
 public class LessThan10Specifications  : ISpecification<int>
 {

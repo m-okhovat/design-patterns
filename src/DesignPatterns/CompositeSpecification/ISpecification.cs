@@ -1,6 +1,4 @@
-using System.Linq.Expressions;
-
-namespace DesignPatterns;
+namespace DesignPatterns.CompositeSpecification;
 
 public  interface ISpecification<in T>
 {
