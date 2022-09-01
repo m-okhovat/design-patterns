@@ -1,8 +1,8 @@
 namespace DesignPatterns.CompositeSpecification;
 
-public class LessThan10Specifications  : ISpecification<int>
+public class LessThan10Specifications  : Specification<int>
 {
-    public bool IsSatisfy(int input)
+    public override bool IsSatisfiedBy(int input)
     {
         return input < 10;
     }

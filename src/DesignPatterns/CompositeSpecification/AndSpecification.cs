@@ -1,9 +1,9 @@
 namespace DesignPatterns.CompositeSpecification;
 
-public class AndSpecification<T> : ISpecification<T>
+public class AndSpecification<T> : Specification<T>
 {
-    private readonly ISpecification<T> _right;
     private readonly ISpecification<T> _left;
+    private readonly ISpecification<T> _right;
 
     public AndSpecification(ISpecification<T> right, ISpecification<T> left)
     {
@@ -11,8 +11,8 @@ public class AndSpecification<T> : ISpecification<T>
         _left = left;
     }
 
-    public bool IsSatisfy(T input)
+    public override bool IsSatisfiedBy(T input)
     {
-        return _right.IsSatisfy(input) && _left.IsSatisfy(input);
+        return _right.IsSatisfiedBy(input) && _left.IsSatisfiedBy(input);
     }
 }

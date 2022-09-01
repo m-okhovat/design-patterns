@@ -1,6 +1,6 @@
 namespace DesignPatterns.CompositeSpecification;
 
-public class OrSpecification<T> : ISpecification<T>
+public class OrSpecification<T> : Specification<T>
 {
     private readonly ISpecification<T> _left;
     private readonly ISpecification<T> _right;
@@ -11,8 +11,8 @@ public class OrSpecification<T> : ISpecification<T>
         _right = right;
     }
 
-    public bool IsSatisfy(T input)
+    public override bool IsSatisfiedBy(T input)
     {
-        return _left.IsSatisfy(input) || _right.IsSatisfy(input);
+        return _left.IsSatisfiedBy(input) || _right.IsSatisfiedBy(input);
     }
 }

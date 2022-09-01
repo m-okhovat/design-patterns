@@ -1,8 +1,8 @@
 namespace DesignPatterns.CompositeSpecification;
 
-public class BiggerThan5Specifications  : ISpecification<int>
+public class BiggerThan5Specifications  : Specification<int>
 {
-    public bool IsSatisfy(int input)
+    public override bool IsSatisfiedBy(int input)
     {
         return input > 5;
     }

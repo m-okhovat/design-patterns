@@ -1,6 +1,6 @@
 namespace DesignPatterns.CompositeSpecification;
 
-public  interface ISpecification<in T>
+public  interface ISpecification<T>
 {
-    bool IsSatisfy(T input);
+    bool IsSatisfiedBy(T input);
 }

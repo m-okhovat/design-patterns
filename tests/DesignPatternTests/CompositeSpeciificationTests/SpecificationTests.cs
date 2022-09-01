@@ -1,8 +1,6 @@
-using DesignPatterns;
 using DesignPatterns.CompositeSpecification;
-using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 
-namespace DesignPatternTests;
+namespace SpecificationRTests.CompositeSpecificationTests;
 
 public class SpecificationTests
 {
@@ -13,7 +11,7 @@ public class SpecificationTests
         var lessThan10Specification = new LessThan10Specifications();
         var andSpecification = new AndSpecification<int>(biggerThan5Specification, lessThan10Specification);
 
-        var isSatisfy = andSpecification.IsSatisfy(6);
+        var isSatisfy = andSpecification.IsSatisfiedBy(6);
         
         Assert.True(isSatisfy);
     }
@@ -25,7 +23,7 @@ public class SpecificationTests
         var lessThan10Specification = new LessThan10Specifications();
         var orSpecification = new OrSpecification<int>(biggerThan5Specification, lessThan10Specification);
 
-        var biggerThanFive = orSpecification.IsSatisfy(11);
+        var biggerThanFive = orSpecification.IsSatisfiedBy(11);
         
         Assert.True(biggerThanFive);
     }
@@ -36,7 +34,7 @@ public class SpecificationTests
         var spec = 
             new BiggerThan5Specifications().And(new LessThan10Specifications());
 
-        var isSatisfy = spec.IsSatisfy(8);
+        var isSatisfy = spec.IsSatisfiedBy(8);
         
         Assert.True(isSatisfy);
     }
@@ -47,7 +45,7 @@ public class SpecificationTests
         var spec = new BiggerThan5Specifications()
             .And(new LessThan10Specifications().Not());
         
-        Assert.False(spec.IsSatisfy(7));
-        Assert.True(spec.IsSatisfy(12));
+        Assert.False(spec.IsSatisfiedBy(7));
+        Assert.True(spec.IsSatisfiedBy(12));
     }
 }
