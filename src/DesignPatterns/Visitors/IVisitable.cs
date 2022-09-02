@@ -1,6 +1,6 @@
 namespace DesignPatterns.Visitors;
 
-public interface IVisitable
+public interface IVisitable<T>
 {
-    public void AcceptVisitor(IVisitor visitor);
+    public void AcceptVisitor(ISpecificationVisitor<T> specificationVisitor);
 }

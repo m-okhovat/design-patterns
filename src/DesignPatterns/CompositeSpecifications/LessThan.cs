@@ -1,4 +1,5 @@
 using DesignPatterns.CompositeSpecifications.BaseSpecifications;
+using DesignPatterns.Visitors;
 
 namespace DesignPatterns.CompositeSpecifications;
 
@@ -14,5 +15,10 @@ public class LessThan  : Specification<int>
     public override bool IsSatisfiedBy(int input)
     {
         return input < _number;
+    }
+
+    public override void AcceptVisitor(ISpecificationVisitor<int> specificationVisitor)
+    {
+        specificationVisitor.Visit(this);
     }
 }

@@ -1,11 +1,13 @@
+using DesignPatterns.Visitors;
+
 namespace DesignPatterns.CompositeSpecifications.BaseSpecifications;
 
 public class AndSpecification<T> : Specification<T>
 {
-    private readonly ISpecification<T> _left;
-    private readonly ISpecification<T> _right;
+    private readonly Specification<T> _left;
+    private readonly Specification<T> _right;
 
-    public AndSpecification(ISpecification<T> right, ISpecification<T> left)
+    public AndSpecification(Specification<T> right, Specification<T> left)
     {
         _right = right;
         _left = left;
@@ -15,4 +17,12 @@ public class AndSpecification<T> : Specification<T>
     {
         return _right.IsSatisfiedBy(input) && _left.IsSatisfiedBy(input);
     }
+
+    public override void AcceptVisitor(ISpecificationVisitor<T> specificationVisitor)
+    {
+        _left.AcceptVisitor(specificationVisitor);
+        specificationVisitor.Visit(this);
+        _right.AcceptVisitor(specificationVisitor);
+    }
+    
 }

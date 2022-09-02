@@ -1,10 +1,12 @@
+using DesignPatterns.Visitors;
+
 namespace DesignPatterns.CompositeSpecifications.BaseSpecifications;
 
 public class NotSpecification<T> : Specification<T>
 {
-    private readonly ISpecification<T> _specification;
+    private readonly Specification<T> _specification;
 
-    public NotSpecification(ISpecification<T> specification)
+    public NotSpecification(Specification<T> specification)
     {
         _specification = specification;
     }
@@ -12,5 +14,11 @@ public class NotSpecification<T> : Specification<T>
     public override bool IsSatisfiedBy(T input)
     {
         return !_specification.IsSatisfiedBy(input);
+    }
+
+    public override void AcceptVisitor(ISpecificationVisitor<T> specificationVisitor)
+    {
+        specificationVisitor.Visit(this);
+        _specification.AcceptVisitor(specificationVisitor);
     }
 }

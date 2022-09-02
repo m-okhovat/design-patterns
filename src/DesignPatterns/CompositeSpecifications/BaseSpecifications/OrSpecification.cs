@@ -1,11 +1,13 @@
+using DesignPatterns.Visitors;
+
 namespace DesignPatterns.CompositeSpecifications.BaseSpecifications;
 
 public class OrSpecification<T> : Specification<T>
 {
-    private readonly ISpecification<T> _left;
-    private readonly ISpecification<T> _right;
+    private readonly Specification<T> _left;
+    private readonly Specification<T> _right;
 
-    public OrSpecification(ISpecification<T> left, ISpecification<T> right)
+    public OrSpecification(Specification<T> left, Specification<T> right)
     {
         _left = left;
         _right = right;
@@ -14,5 +16,12 @@ public class OrSpecification<T> : Specification<T>
     public override bool IsSatisfiedBy(T input)
     {
         return _left.IsSatisfiedBy(input) || _right.IsSatisfiedBy(input);
+    }
+
+    public override void AcceptVisitor(ISpecificationVisitor<T> specificationVisitor)
+    {
+        _left.AcceptVisitor(specificationVisitor);
+        specificationVisitor.Visit(this);
+        _right.AcceptVisitor(specificationVisitor);
     }
 }

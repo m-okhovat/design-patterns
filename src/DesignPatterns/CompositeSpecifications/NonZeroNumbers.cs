@@ -3,15 +3,15 @@ using DesignPatterns.Visitors;
 
 namespace DesignPatterns.CompositeSpecifications;
 
-public class NonZeroNumbers: Specification<int>, IVisitable   
+public class NonZeroNumbers: Specification<int>
 {
     public override bool IsSatisfiedBy(int entity)
     {
         return entity != 0;
     }
 
-    public void AcceptVisitor(IVisitor visitor)
+    public override void AcceptVisitor(ISpecificationVisitor<int> specificationVisitor)
     {
-        visitor.Visit(this);
+        specificationVisitor.Visit(this);
     }
 }
