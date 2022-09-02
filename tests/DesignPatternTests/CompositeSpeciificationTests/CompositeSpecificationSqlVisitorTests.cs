@@ -18,4 +18,18 @@ public class CompositeSpecificationSqlVisitorTests
         Assert.True(isSatisfiedBy);
         
     }
+
+    [Fact]
+    public void Generate_persian_expressions()
+    {
+        var specification = new EvenNumbers().And(new PositiveNumbers());
+        var persianExpressionGenerator = new PersianExpressionGenerator<int>();
+        
+        specification.AcceptVisitor(persianExpressionGenerator);
+        var isSatisfiedBy = specification.IsSatisfiedBy(2);
+
+        var query = persianExpressionGenerator.GenerateExpressions();
+        Assert.True(isSatisfiedBy);
+
+    }
 }
