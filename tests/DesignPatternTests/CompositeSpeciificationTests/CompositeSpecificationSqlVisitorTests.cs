@@ -26,7 +26,7 @@ public class CompositeSpecificationSqlVisitorTests
         var persianExpressionGenerator = new PersianExpressionGenerator<int>();
         
         specification.AcceptVisitor(persianExpressionGenerator);
-        var isSatisfiedBy = specification.IsSatisfiedBy(2);
+        var isSatisfiedBy = specification.IsSatisfiedBy(10);
 
         var query = persianExpressionGenerator.GenerateExpressions();
         Assert.True(isSatisfiedBy);

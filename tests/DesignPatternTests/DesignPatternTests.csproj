@@ -27,4 +27,8 @@
       <ProjectReference Include="..\..\src\DesignPatterns\DesignPatterns.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="StepBuilders" />
+    </ItemGroup>
+
 </Project>
